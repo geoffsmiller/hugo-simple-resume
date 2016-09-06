@@ -3,11 +3,16 @@
 		{{ partial "about" . }}
 	{{ end }}
 
-	{{ if not .Site.Params.portfolio.hide }}
-		{{ partial "portfolio" . }}
+	{{ if not .Site.Params.skills.hide }}
+		{{ partial "skills" . }}
 	{{ end }}
 
-	{{ if not .Site.Params.contact.hide }}
-		{{ partial "contact" . }}
+	{{ if not .Site.Params.experience.hide }}
+		{{ partial "experience" . }}
 	{{ end }}
+
+	{{ if not .Site.Params.education.hide }}
+		{{ partial "education" . }}
+	{{ end }}
+
 {{ end }}

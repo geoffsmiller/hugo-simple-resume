@@ -2,9 +2,14 @@
 <header id="header">
 	<a href="{{ .Site.BaseURL }}" class="image avatar"><img src="{{ .Site.BaseURL }}images/{{ .Site.Params.sidebar.avatar }}" alt="" /></a>
 	{{ with .Site.Params.sidebar.bio }}
-		<h1>{{ . | markdownify }}</h1>
+		<h1>{{ . }}</h1>
 	{{ end }}
-
+	{{ with .Site.Params.sidebar.location }}
+		<h3>{{ . }}</h3>
+	{{ end }}
+	{{ with .Site.Params.sidebar.phone }}
+		<h3>{{ . }}</h3>
+	{{ end }}
 	{{ with .Site.Menus.main }}
 		<nav id="sidebar">
 			<ul>

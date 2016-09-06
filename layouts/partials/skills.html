@@ -1,0 +1,18 @@
+{{ "<!-- skills -->" | safeHTML }}
+<section id="two">
+	<header class="major">
+		{{ with .Site.Params.skills.title }}<h2>{{ . | markdownify }}</h2>{{ end }}
+	</header>
+	<div class="row">
+		{{ range .Site.Params.skills.header}}
+		<article class="6u 12u$(xsmall) work-item">
+			<h3>{{ .text | markdownify}}</h3>
+			<ul>
+				{{ range .skill }}
+				<li>{{ .text | markdownify }}</li>
+				{{ end }}
+			</ul>
+		</article>
+		{{ end }}
+	</div>
+</section>

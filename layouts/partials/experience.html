@@ -1,0 +1,26 @@
+{{ "<!-- experience -->" | safeHTML }}
+<section id="three">
+	<header class="major">
+		{{ with .Site.Params.experience.title }}<h2>{{ . | markdownify }}</h2>{{ end }}
+	</header>
+	<div class="row">
+		{{ range .Site.Params.experience.job }}
+		<article class="12u work-item">
+			<h3>{{ .title | markdownify }}</h3>
+			<h4>{{ .employer }} ({{ .time_range }})</h4>
+			<ul>
+				{{ range .bulletpoint }}
+				<li>{{ .text | markdownify }}</li>
+					{{ if .subbulletpoint}}
+					<ul>
+					{{ range .subbulletpoint }}
+						<li>{{ .text | markdownify }}</li>
+					{{ end }}
+					</ul>
+					{{ end }}
+				{{ end }}
+			</ul>
+		</article>
+		{{ end }}
+	</div>
+</section>

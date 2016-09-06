@@ -1,0 +1,16 @@
+{{ "<!-- education -->" | safeHTML }}
+<section id="four">
+	{{ with .Site.Params.education.title }}<h2>{{ . }}</h2>{{ end }}
+	<div class="row">
+		{{ range .Site.Params.education.school }}
+		<article class="12u work-item">
+			<h3>{{ .name }} ({{ .time_range | markdownify }})</h3>
+			<ul>
+				{{ range .bulletpoint }}
+				<li>{{ .text}}</li>
+				{{ end }}
+			</ul>
+		</article>
+		{{ end }}
+	</div>
+</section>

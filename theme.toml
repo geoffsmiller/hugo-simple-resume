@@ -1,9 +1,9 @@
-name = "Strata"
+name = "Simple Resume"
 license = "Creative Commons Attribution 3.0 Unported"
-licenselink = "//github.com/digitalcraftsman/hugo-strata-theme/blob/master/LICENSE.md"
-description = "A responsive and minimal single-page portfolio with blogging capabilities."
-homepage = "//github.com/digitalcraftsman/hugo-strata-theme"
-tags = ["image gallery", "contact form", "google analytics", "customizable", "blog", "single-page"]
+licenselink = "//github.com/geoffsmiller/hugo-simple-resume/blob/master/LICENSE.md"
+description = "A simple resume one-pager template based on digitalcraftsman's port of HTML5UP's Strata theme to Hugo"
+homepage = "//github.com/geoffsmiller/hugo-simple-resume/"
+tags = ["resume", "google analytics", "customizable", "single-page"]
 features = ["", ""]
 min_version = 0.16
 
@@ -13,6 +13,6 @@ min_version = 0.16
 
 # If porting an existing theme
 [original]
-  name = "AJ"
-  homepage = "//html5up.net/"
-  repo = ""
+  name = "digitalcraftsman"
+  homepage = "//github.com/digitalcraftsman"
+  repo = "https://github.com/digitalcraftsman/hugo-strata-theme"
