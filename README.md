@@ -1,89 +1,49 @@
-# Strata Theme
+# Simple Resume Theme
 
-The Strata theme is a responsive and minimal one-page-portfolio based on the self-named template made by [HTML5UP](//html5up.net/). Noteworthy features of this Hugo theme are a custom about section, a portfolio with gallery for photographs or client works and a contact form.
+The Simple Resume theme for Hugo is a simple one-pager resume template, based on [digitalcraftsman's port](https://github.com/digitalcraftsman/hugo-strata-theme) of [HTML5UP](https://html5up.net/)'s Strata theme to Hugo. It's mostly a simplification of the Strata theme, along with a few minor tweaks and additions to make it suitable for easily converting a resume into a clean, responsive web page.
 
-![Screenshot](https://raw.githubusercontent.com/digitalcraftsman/hugo-strata-theme/dev/images/screenshot.png)
-
+![Screenshot](https://raw.githubusercontent.com/geoffsmiller/hugo-simple-resume/master/images/screenshot.png)
 
 ## Installation
 
 Inside the folder of your Hugo site run:
 
-    $ git clone https://github.com/digitalcraftsman/hugo-strata-theme.git
+    $ git clone https://github.com/geoffsmiller/hugo-simple-resume.git
 
-For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
+For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
 
 
 ## Getting started
 
-After installing the Strata Theme successfully it requires a just a few more steps to get your site finally running.
+After installing the Simple Resume Theme successfully it requires just a few more steps to get your site finally running.
 
 
 ### The config file
 
-Take a look inside the [`exampleSite`](https://github.com/digitalcraftsman/hugo-strata-theme/tree/dev/exampleSite) folder of this theme. You'll find a file called [`config.toml`](//github.com/digitalcraftsman/hugo-strata-theme/blob/dev/exampleSite/config.toml). To use it, copy the [`config.toml`](//github.com/digitalcraftsman/hugo-strata-theme/blob/dev/exampleSite/config.toml) in the root folder of your Hugo site. Feel free to customize this theme as you like.
+Take a look inside the [`exampleSite`](https://github.com/geoffsmiller/hugo-simple-resume/tree/master/exampleSite) folder of this theme. You'll find a file called [`config.toml`](https://github.com/geoffsmiller/hugo-simple-resume/blob/master/exampleSite/config.toml). Copy it to the root folder of your Hugo site. Feel free to customize this theme as you like.
 
 ### Sidebar
 
-The sidebar provides a small overview of who you are. One of the first elements that will be spottet is the avatar in the sidebar. Replace it with a nice picture of you by either swapping the [`avatar.jpg`](https://github.com/digitalcraftsman/hugo-strata-theme/blob/dev/static/images/avatar.jpg) or by setting a new path to an image in [`config.toml`](//github.com/digitalcraftsman/hugo-strata-theme/blob/dev/exampleSite/config.toml):
+The sidebar provides a small overview of who you are. One of the first elements that will be spotted is the avatar in the sidebar. Replace it with a nice picture of you by either swapping the default [`avatar.jpg`](https://github.com/geoffsmiller/hugo-simple-resume/blob/master/static/images/avatar.jpg) or by setting a new path to an image in [`config.toml`](https://github.com/geoffsmiller/hugo-simple-resume/blob/master/exampleSite/config.toml):
 
 ```toml
 [params.sidebar]
     avatar = "avatar.jpg"
 ```
 
-The path is relative to [`./static/images`](https://github.com/digitalcraftsman/hugo-strata-theme/tree/dev/static/images).
+The path is relative to [`./static/images`](https://github.com/geoffsmiller/hugo-simple-resume/tree/master/static/images).
 
-Last but not least add a few words about you and your work.
+Last but not least, you can add some other details such as your phone number, location, social media links (WordPress, GitHub, LinkedIn, etc.), and a link to a PDF copy of your resume.
 
+### Build up your resume
+The resume has four main sections that can be configured in [`config.toml`](https://github.com/geoffsmiller/hugo-simple-resume/blob/master/exampleSite/config.toml)
 
-### Build up your portfolio
+* Summary
+* Skills
+* Experience
+* Education
 
-As photograph or freelancer, your most important piece in the resume is the work you've done. Within the [`config.toml`](//github.com/digitalcraftsman/hugo-strata-theme/blob/dev/exampleSite/config.toml) add the following snippet to add a new item to the gallery:
-
-```toml
-[params.portfolio]
-
-        # The images and thumbnails are stored under static/images
-        # Create and change subfolders as you like
-        [[params.portfolio.gallery]]
-            image = "fulls/01.jpg"
-            thumb = "thumbs/01.jpg"
-            title = "Lorem ipsum dolor."
-            description = "Lorem ipsum dolor sit amet."
-```
-
-### Make the contact form working
-
-Since this page will be static, you can use [formspree.io](//formspree.io/) as proxy to send the actual email. Each month, visitors can send you up to one thousand emails without incurring extra charges. Begin the setup by following the steps below:
-
-1. Enter your email address under 'email' in the [`config.toml`](//github.com/digitalcraftsman/hugo-strata-theme/blob/dev/exampleSite/config.toml)
-2. Upload the generated site to your server
-3. Send a dummy email yourself to confirm your account
-4. Click the confirm link in the email from [formspree.io](//formspree.io/)
-5. You're done. Happy mailing!
-
-
-### Menu
-
-You can also define the items menu entries as you like in the left sidebar. E.g. let's link a post that you've written. We can do this in the frontmatter of the post's content file by setting `menu` to `main`.
-
-```
-+++
-menu = "main"
-+++
-```
-
-Alternatively, we can add entries from the config file. Back in the config.toml you'll find a section for the menu:
-
-```
-[[menu.main]]
-	name = "Home"
-	url  = "/"
-	weight = 0
-```
-
-The `weight` attribute allows your to change the order of the entries. Heavier weighted entries appear further down in the menu.
+For the most part, these are self explanatory. The Summary takes a single `content` attribute for its text. The other sections take headings, subheadings, bullet points, etc. Each section has its own partial layout in [`./layout/partials`](https://github.com/geoffsmiller/hugo-simple-resume/tree/master/layouts/partials). Edit as needed to suit your needs.
 
 ### Nearly finished
 
@@ -91,30 +51,30 @@ In order to see your site in action, run Hugo's built-in local server.
 
     $ hugo server
 
-Now enter [`localhost:1313`](//localhost:1313) in the address bar of your browser.
+Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
 
 To be able to access your site from anywhere, use the following:
 
     $ hugo server --bind=[Your IP] --port=80 --baseURL=https://example.com --appendPort=false
 
-
 ## Changelog
 
-All modifications to this theme are listed in the [Changelog](//github.com/digitalcraftsman/hugo-strata-theme/blob/master/CHANGELOG.md).
+All modifications to this theme are listed in the [Changelog](https://github.com/geoffsmiller/hugo-simple-resume/blob/master/CHANGELOG.md).
 
 ## Contributing
 
-Did you found a bug or got an idea for a new feature? Feel free to use the [issue tracker](//github.com/digitalcraftsman/hugo-strata-theme/issues) to let me know. Or make directly a [pull request](//github.com/digitalcraftsman/hugo-strata-theme/pulls).
+Did you find a bug? Do you have an idea for a new feature? Feel free to use the [issue tracker](https://github.com/geoffsmiller/hugo-simple-resume/issues) to let me know. Or simply make a [pull request](https://github.com/geoffsmiller/hugo-simple-resume/pulls).
 
 
 ## License
 
-This theme is released under the Creative Commons Attribution 3.0 Unported  License. For more information read the [License](//github.com/digitalcraftsman/hugo-strata-theme/blob/dev/LICENSE.md).
+This theme is released under the Creative Commons Attribution 3.0 Unported  License. For more information read the [License](https://github.com/geoffsmiller/hugo-simple-resume/blob/master/LICENSE.md).
 
 
 ## Annotations
 
 Thanks to
 
-- [HTML5UP](//html5up.net/) for creating the original theme
-- [Steve Francia](//github.com/spf13) for creating [Hugo](//gohugo.io) and the awesome community around the project.
+- [digitalcraftsman](https://github.com/digitalcraftsman) for porting the theme to Hugo.
+- [HTML5UP](https://html5up.net/) for creating the original theme.
+- [Steve Francia](https://github.com/spf13) for creating [Hugo](https://gohugo.io) and the awesome community around the project.
